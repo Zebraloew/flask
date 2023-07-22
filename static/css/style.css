@@ -1,0 +1,68 @@
+:root {
+    --color-1: #38D65D;
+    --clip-1: 20px;
+    --clip-2: 65px;
+}
+
+.test {
+    color: var(--color-1);
+}
+
+
+/* 
+Content 
+    .
+    Clipped Corner
+    Shadow for clipped corner  
+    temporary styles for testing
+    #
+    Logo
+*/
+
+
+
+/* Clipped corner */
+.es-clip {
+    clip-path: polygon(0 0,100% 0,100% 0,100% calc(100% - var(--clip-2)),calc(100% - var(--clip-2)) 100%,0 100%);
+}
+
+.es-clip-s {
+    clip-path: polygon(0 0,100% 0,100% 0,100% calc(100% - var(--clip-1)),calc(100% - var(--clip-1)) 100%,0 100%);
+}
+
+/* fades shadow out when mouse leaves */
+.es-shadow-on-hover {
+    transition: filter 0.8s;
+    filter: drop-shadow(rgba(0,0,0,0.04) 3px 9px 9px); 
+}
+/* fades shadow in */
+.es-shadow-on-hover:hover {
+    transition: filter 0.2s;
+    filter: drop-shadow(rgba(0,0,0,0.2) 3px 9px 9px); 
+}
+
+
+.beta-diagram {
+    background-color: rgba(0,0,0,0.1);
+    display: inline-block;
+
+    padding: 15px;
+    width: auto;
+
+}
+
+/* ID */
+
+#logo {
+    height: 50px;
+}
+
+#textlogo {
+    height: 50px;
+}
+
+#textlogo-container{
+    position: absolute;
+    top: 25px;
+    left: 60px;
+}

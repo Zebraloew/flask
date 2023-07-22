@@ -4,33 +4,105 @@
         <!-- HTML Skeletton -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jay's Flask Cheat Sheet</title>
+        <title>Jay's EUSUHM Cheat Sheet</title>
 
         <!-- UI KIT -->
         <link rel="stylesheet" href="../static/uikit/css/uikit.min.css" />
         <script src="../static/uikit/js/uikit.min.js"></script>
         <script src="../static/uikit/js/uikit-icons.min.js"></script>
 
+        <!-- SITE STYLE -->
+        <link rel="stylesheet" href="../static/css/style.css" />
+
     </head>
-    <body>
-        <article>
+    <body class="uk-section-muted">
+        <header id="header" class="">
+            <!-- NAV BAR  -->
+            <nav class="uk-navbar-container uk-margin uk-navbar-transparent" uk-sticky>
+                <div class="uk-container">
+                    <div  uk-navbar>
+                        <!-- Logo -->
+                        <a class="uk-navbar-item uk-logo" href="#" aria-label="Back to Home"><img id="logo" src="../static/images/eusuhm_logo.svg"/></a>   
+                        <!-- Burger -->
+                        <div class="uk-navbar-right">
+                            <a href="#offcanvas-nav-primary" class="uk-navbar-toggle" uk-navbar-toggle-icon uk-toggle></a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </nav>
+            <!-- END NAV BAR  -->
             
-            <h1>Jay's Flask Cheat Sheet</h1>
-            {% for i in todos %}
-                <ul>
-                    <li>{{ i }}</li>
-                </ul>
-            {% endfor %}
-            <form method="POST">
-                {{ template_form.hidden_tag() }}
-                <p>
-                    <!-- {{ template_form.todo.label }} -->
-                    {{ template_form.todo() }}
-                    {{ template_form.submit() }}
-            
-                </p>
-            </form>
-            
-        </article>
+            <!-- OFF CANVAS -->
+            <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true;flip: true;bg-close: true;">
+                <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                    <!-- X Button -->
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                    <!-- Links -->
+                    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                        <li class="uk-active"><a href="#">Active</a></li>
+                        <li class="uk-parent">
+                            <a href="#">Parent</a>
+                            <ul class="uk-nav-sub">
+                                <li><a href="#">Sub item</a></li>
+                                <li><a href="#">Sub item</a></li>
+                            </ul>
+                        </li>
+                        <li class="uk-nav-header">Header</li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: table"></span> Item</a></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: thumbnails"></span> Item</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: trash"></span> Item</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+            <!-- OFF CANVAS END -->
+        </header>
+        <!-- Logo Text -->
+        <div id="textlogo-container" class="">
+            <div class="uk-container">
+                <a href="#"><img  id="textlogo" src="../static/images/eusuhm.svg"/></a>
+            </div>
+        </div>
+        
+        <!-- <p class="test">test</p> -->
+
+        
+        <section class="uk-section uk-section-muted">
+            <div  class="uk-container" >
+                <h1>Jay's EUSUHM Cheat Sheet</h1>
+                <div class="uk-article">
+                    <h3>Cards with shadow</h3>
+                    Um die Cards mit abgeschnittener Ecke mit Schatten zu nutzen,
+                    muss der Schatten auf ein äußeres Element angewandt werden.
+                    <div class="beta-diagram es-shadow-on-hover">div wrap for shadow
+                        <div class="beta-diagram es-clip-s" > inner div for clipped corner</div>
+                    </div>
+                </div>
+                <!-- Cards -->
+                <div class="uk-section">                
+                    <h3>Responsive grid with Cards </h3>    
+                    <div class="uk-child-width-expand@s uk-text-center" uk-grid>
+                        <div class="es-shadow-on-hover">
+                            <div class="uk-card uk-card-default uk-card-body uk-card-hover es-clip-s ">uk-navbar-toggle-animate <br> macht Burger zu Kreuz</div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-body uk-card-hover es-clip">Item</div>
+                        </div>
+                        <div>
+                            <div class="uk-card uk-card-default uk-card-body uk-card-hover">Item</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+            </div>
+        </section>
+        
+        <div class="uk-background-muted uk-height-large">
+            <div class="uk-card uk-card-default uk-card-body uk-text-center uk-position-z-index" uk-sticky="position: bottom; end: !.uk-height-large">Stick to the bottom</div>
+        </div>
     </body>
 </html>
