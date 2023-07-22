@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jay's Flask Cheat Sheet</title>
+    </head>
+    <body>
+        <h1>Jay's Flask Cheat Sheet</h1>
+        {% for i in todos %}
+            <ul>
+                <li>{{ i }}</li>
+            </ul>
+        {% endfor %}
+        <form method="POST">
+            {{ template_form.hidden_tag() }}
+            <p>
+                <!-- {{ template_form.todo.label }} -->
+                {{ template_form.todo() }}
+                {{ template_form.submit() }}
+                
+            </p>
+        </form>
+        
+    </body>
+</html>
